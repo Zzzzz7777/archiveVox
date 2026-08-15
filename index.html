@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ArchiveVox</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Official Google Identity Services Script -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <main class="login-container">
+        <div class="login-card">
+            <!-- App Branding -->
+            <header class="login-header">
+                <h1>ArchiveVox</h1>
+                <p>Welcome back! Let's practice reading.</p>
+            </header>
+
+            <!-- Standard Login Form -->
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="btn-login">Sign In</button>
+            </form>
+
+            <!-- Visual Divider -->
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <!-- Google Sign-In Container -->
+            <!-- Note: Replace YOUR_FUTURE_CLIENT_ID next month during implementation -->
+            <div id="g_id_onload"
+                 data-client_id="YOUR_FUTURE_CLIENT_ID.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left"
+                 data-width="340">
+            </div>
+
+            <!-- Quick Footer Links -->
+            <footer class="login-footer">
+                <a href="#">Forgot password?</a>
+                <p>Need an account? <a href="#">Sign up</a></p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Placeholder script for next month's authentication logic -->
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token data received from Google:", response.credential);
+            alert("Google authentication successful! Token received (check console).");
+            // Next month: Send response.credential to your backend database here
+        }
+
+        // Handle standard login form submission
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    console.log('User data:', data.user);
+                    console.log('User role:', data.user.role);
+                    console.log('User role type:', typeof data.user.role);
+                    
+                    // Store user in localStorage for session management
+                    localStorage.setItem('archivevox.user', JSON.stringify(data.user));
+                    
+                    alert('Login successful! Welcome, ' + data.user.username + '\nRole: ' + data.user.role);
+                    
+                    // Redirect based on user role (case-insensitive)
+                    const userRole = data.user.role ? String(data.user.role).toLowerCase().trim() : '';
+                    console.log('Normalized role:', userRole);
+                    
+                    if (userRole === 'principal' || userRole === 'admin') {
+                        window.location.href = '/principal-dashboard.html';
+                    } else if (userRole === 'teacher') {
+                        window.location.href = '/teacher/dashboard.html';
+                    } else if (userRole === 'student') {
+                        window.location.href = '/student-dashboard.html';
+                    } else if (userRole === 'parent') {
+                        window.location.href = '/parent-dashboard.html';
+                    } else {
+                        // Default redirect for other roles
+                        console.log('Unknown role: "' + userRole + '", defaulting to student dashboard');
+                        window.location.href = '/student-dashboard.html';
+                    }
+                } else {
+                    alert('Login failed: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('An error occurred during login. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

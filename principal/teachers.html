@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers Management - ArchiveVox</title>
+    <link rel="stylesheet" href="/static/admin-style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-area">ArchiveVox</div>
+                <div class="menu-label">Menus</div>
+                <div class="user-role-card">
+                    <span class="role-title">Logged in as</span>
+                    <span class="role-name">Principal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+    <a href="/principal-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="/principal/teachers.html" class="nav-item active">
+        Teachers 
+        <span class="arrow">&gt;</span>
+    </a>
+    <a href="/principal/students.html" class="nav-item">Students</a>
+    <a href="/principal/library.html" class="nav-item">Library</a>
+    <a href="/principal/assessments.html" class="nav-item">Assessments</a>
+    <a href="/principal/reports.html" class="nav-item">Reports</a>
+</nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar-placeholder"></div>
+                    <div>
+                        <div class="profile-name">Name</div>
+                        <div class="profile-role">Role</div>
+                    </div>
+                </div>
+                <button class="settings-btn" id="logoutBtn" aria-label="Logout" onclick="handleLogout()">🚪</button>
+            </div>
+        </aside>
+
+        <!-- Main Panel Content -->
+        <main class="main-content">
+            <!-- Header Top Bar -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Teachers</h1>
+                    <span class="current-date">Date</span>
+                </div>
+                <button class="notification-btn" aria-label="Notifications">
+                    🔔
+                </button>
+            </header>
+
+            <!-- Workspace Layout -->
+            <div class="teachers-container">
+                
+                <!-- Action Controls: Search & Add Teacher -->
+                <div class="action-bar">
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="Search by name, subject, or ID..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button class="btn-add-teacher">+ Add Teacher</button>
+                </div>
+
+                <!-- 2x2 Teachers Cards Grid -->
+                <div class="teachers-grid">
+                    
+                    <!-- Teacher Card 1 -->
+                    <div class="teacher-card">
+                        <div class="card-top-bar">
+                            <div class="teacher-identity">
+                                <div class="teacher-avatar">👤</div>
+                                <div class="teacher-meta">
+                                    <h3>Teacher Name</h3>
+                                    <span class="teacher-id">ID Number: #T-8402</span>
+                                </div>
+                            </div>
+                            <button class="options-btn" aria-label="More options">•••</button>
+                        </div>
+                        <div class="teacher-stats-subgrid">
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Classes</span>
+                                <span class="sub-stat-value">4</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Students</span>
+                                <span class="sub-stat-value">128</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Assessments</span>
+                                <span class="sub-stat-value">42</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Avg Accuracy</span>
+                                <span class="sub-stat-value">88%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher Card 2 -->
+                    <div class="teacher-card">
+                        <div class="card-top-bar">
+                            <div class="teacher-identity">
+                                <div class="teacher-avatar">👤</div>
+                                <div class="teacher-meta">
+                                    <h3>Teacher Name</h3>
+                                    <span class="teacher-id">ID Number: #T-9120</span>
+                                </div>
+                            </div>
+                            <button class="options-btn" aria-label="More options">•••</button>
+                        </div>
+                        <div class="teacher-stats-subgrid">
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Classes</span>
+                                <span class="sub-stat-value">3</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Students</span>
+                                <span class="sub-stat-value">95</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Assessments</span>
+                                <span class="sub-stat-value">38</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Avg Accuracy</span>
+                                <span class="sub-stat-value">92%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher Card 3 -->
+                    <div class="teacher-card">
+                        <div class="card-top-bar">
+                            <div class="teacher-identity">
+                                <div class="teacher-avatar">👤</div>
+                                <div class="teacher-meta">
+                                    <h3>Teacher Name</h3>
+                                    <span class="teacher-id">ID Number: #T-3041</span>
+                                </div>
+                            </div>
+                            <button class="options-btn" aria-label="More options">•••</button>
+                        </div>
+                        <div class="teacher-stats-subgrid">
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Classes</span>
+                                <span class="sub-stat-value">5</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Students</span>
+                                <span class="sub-stat-value">160</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Assessments</span>
+                                <span class="sub-stat-value">56</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Avg Accuracy</span>
+                                <span class="sub-stat-value">85%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teacher Card 4 -->
+                    <div class="teacher-card">
+                        <div class="card-top-bar">
+                            <div class="teacher-identity">
+                                <div class="teacher-avatar">👤</div>
+                                <div class="teacher-meta">
+                                    <h3>Teacher Name</h3>
+                                    <span class="teacher-id">ID Number: #T-5519</span>
+                                </div>
+                            </div>
+                            <button class="options-btn" aria-label="More options">•••</button>
+                        </div>
+                        <div class="teacher-stats-subgrid">
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Classes</span>
+                                <span class="sub-stat-value">2</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Students</span>
+                                <span class="sub-stat-value">64</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Assessments</span>
+                                <span class="sub-stat-value">21</span>
+                            </div>
+                            <div class="sub-stat-box">
+                                <span class="sub-stat-label">Avg Accuracy</span>
+                                <span class="sub-stat-value">90%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/shared/logout.js"></script>
+</body>
+</html>

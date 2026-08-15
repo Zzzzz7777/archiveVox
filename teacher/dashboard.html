@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchiveVox - Teacher Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- APP SHELL -->
+    <div id="app-shell">
+        <!-- Sidebar Header -->
+        <div class="topbar-left">
+            <div class="sidebar-brand-row">
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Navigation" aria-expanded="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="sidebar-brand-copy">
+                    <div class="logo-small">ArchiveVox</div>
+                    <div class="sidebar-subtitle">Reading Assessment System</div>
+                </div>
+            </div>
+            <span id="role-badge" class="role-badge">Teacher</span>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="nav-tabs" id="nav-container">
+            <!-- Dynamically rendered by JavaScript -->
+        </nav>
+
+        <!-- Sidebar Footer Actions -->
+        <div class="topbar-actions">
+            <span id="user-badge">Guest</span>
+            <button id="settings-btn" class="icon-btn" aria-label="Settings">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm8.8-3.2a7.8 7.8 0 0 0-.1-1.2l2-1.6-2-3.5-2.5 1a8.9 8.9 0 0 0-2-1.2l-.4-2.7h-4l-.4 2.7a8.9 8.9 0 0 0-2 1.2l-2.5 1-2 3.5 2 1.6a7.8 7.8 0 0 0-.1 1.2c0 .4 0 .8.1 1.2l-2 1.6 2 3.5 2.5-1c.6.5 1.3.9 2 1.2l.4 2.7h4l.4-2.7c.7-.3 1.4-.7 2-1.2l2.5 1 2-3.5-2-1.6c.1-.4.1-.8.1-1.2Z"/>
+                </svg>
+            </button>
+            <button id="logout-btn" class="btn-secondary">Sign Out</button>
+        </div>
+
+        <!-- Top Bar -->
+        <header class="topbar" id="topbar">
+            <button id="sidebar-toggle-mobile" class="sidebar-toggle sidebar-toggle-mobile" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div id="topbar-content" class="topbar-content">
+                <div class="topbar-center">
+                    <span id="current-date"></span>
+                </div>
+            </div>
+        </header>
+
+        <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+        <!-- Main Content -->
+        <main id="view-container" class="view-container"></main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/shared/shared.js"></script>
+    <script src="/static/teacher/js/dashboard.js"></script>
+</body>
+</html>

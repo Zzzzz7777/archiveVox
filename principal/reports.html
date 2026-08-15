@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - ArchiveVox</title>
+    <link rel="stylesheet" href="/static/admin-style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-area">ArchiveVox</div>
+                <div class="menu-label">Menus</div>
+                <div class="user-role-card">
+                    <span class="role-title">Logged in as</span>
+                    <span class="role-name">Principal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+    <a href="/principal-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="/principal/teachers.html" class="nav-item">Teachers</a>
+    <a href="/principal/students.html" class="nav-item">Students</a>
+    <a href="/principal/library.html" class="nav-item">Library</a>
+    <a href="/principal/assessments.html" class="nav-item">Assessments</a>
+    <a href="/principal/reports.html" class="nav-item active">
+        Reports 
+        <span class="arrow">&gt;</span>
+    </a>
+</nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar-placeholder"></div>
+                    <div>
+                        <div class="profile-name">Name</div>
+                        <div class="profile-role">Role</div>
+                    </div>
+                </div>
+                <button class="settings-btn" id="logoutBtn" aria-label="Logout" onclick="handleLogout()">🚪</button>
+            </div>
+        </aside>
+
+        <!-- Main Panel Content -->
+        <main class="main-content">
+            <!-- Header Top Bar -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Reports</h1>
+                    <span class="current-date">Date</span>
+                </div>
+                <button class="notification-btn" aria-label="Notifications">🔔</button>
+            </header>
+
+            <!-- Workspace Layout -->
+            <div class="reports-container">
+                
+                <!-- Action Controls: Search & Generate Report -->
+                <div class="action-bar">
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="Search reports..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button class="btn-generate-report">+ Generate Report</button>
+                </div>
+
+                <!-- Vertical Reports List -->
+                <div class="reports-list">
+                    
+                    <!-- Report Item 1 -->
+                    <div class="report-card">
+                        <div class="report-info">
+                            <div class="report-icon">📄</div>
+                            <div class="report-details">
+                                <h3>Monthly Summary</h3>
+                                <span class="report-date">Date</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="icon-btn" aria-label="Preview Report" title="Preview">👁</button>
+                            <button class="icon-btn" aria-label="Download Report" title="Download">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Report Item 2 -->
+                    <div class="report-card">
+                        <div class="report-info">
+                            <div class="report-icon">📄</div>
+                            <div class="report-details">
+                                <h3>Individual Progress</h3>
+                                <span class="report-date">Date</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="icon-btn" aria-label="Preview Report" title="Preview">👁</button>
+                            <button class="icon-btn" aria-label="Download Report" title="Download">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Report Item 3 -->
+                    <div class="report-card">
+                        <div class="report-info">
+                            <div class="report-icon">📄</div>
+                            <div class="report-details">
+                                <h3>Teacher Activity</h3>
+                                <span class="report-date">Date</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="icon-btn" aria-label="Preview Report" title="Preview">👁</button>
+                            <button class="icon-btn" aria-label="Download Report" title="Download">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Report Item 4 -->
+                    <div class="report-card">
+                        <div class="report-info">
+                            <div class="report-icon">📄</div>
+                            <div class="report-details">
+                                <h3>Fluency Analysis</h3>
+                                <span class="report-date">Date</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="icon-btn" aria-label="Preview Report" title="Preview">👁</button>
+                            <button class="icon-btn" aria-label="Download Report" title="Download">📥</button>
+                        </div>
+                    </div>
+
+                    <!-- Report Item 5 -->
+                    <div class="report-card">
+                        <div class="report-info">
+                            <div class="report-icon">📄</div>
+                            <div class="report-details">
+                                <h3>At-Risk Students</h3>
+                                <span class="report-date">Date</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="icon-btn" aria-label="Preview Report" title="Preview">👁</button>
+                            <button class="icon-btn" aria-label="Download Report" title="Download">📥</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/shared/logout.js"></script>
+</body>
+</html>

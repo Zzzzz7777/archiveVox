@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress - ArchiveVox</title>
+    <link rel="stylesheet" href="/static/admin-style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <!-- Left Sidebar Navigation (Student Role) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-area">ArchiveVox</div>
+                <div class="menu-label">Menus</div>
+                <div class="user-role-card">
+                    <span class="role-title">Logged in as</span>
+                    <span class="role-name">Student</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/student-dashboard.html" class="nav-item">Dashboard</a>
+                <a href="/student-progress.html" class="nav-item active">
+                    My Progress 
+                    <span class="arrow">&gt;</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar-placeholder"></div>
+                    <div>
+                        <div class="profile-name">Name</div>
+                        <div class="profile-role">Role</div>
+                    </div>
+                </div>
+                <button class="settings-btn" id="logoutBtn" aria-label="Logout" onclick="handleLogout()">🚪</button>
+            </div>
+        </aside>
+
+        <!-- Main Panel Content -->
+        <main class="main-content">
+            <!-- Header Top Bar -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                    <span class="current-date">Date</span>
+                </div>
+                <button class="notification-btn" aria-label="Notifications">
+                    🔔
+                </button>
+            </header>
+
+            <!-- Workspace Layout -->
+            <div class="student-progress-container">
+                
+                <!-- Top Section: Accuracy Over Time (Line Chart) -->
+                <div class="student-card progress-chart-box">
+                    <div class="student-card-header">
+                        <div class="student-info-meta">
+                            <span class="student-name-title">Name</span>
+                            <span class="student-grade-sub">Grade</span>
+                        </div>
+                    </div>
+                    <div class="student-card-body">
+                        <h3 class="chart-subtitle">Accuracy over time</h3>
+                        <div class="chart-placeholder">Line Chart</div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Past Assessments -->
+                <div class="student-card past-assessments-box">
+                    <div class="student-card-header">
+                        <h3>Past Assessments</h3>
+                    </div>
+                    <div class="past-assessments-list">
+                        
+                        <div class="past-assessment-item">
+                            <div class="assessment-meta">
+                                <h4>Title</h4>
+                                <span class="assessment-date">Date</span>
+                            </div>
+                            <div class="assessment-score">
+                                <span class="score-label">Rating</span>
+                                <span class="score-value">00%</span>
+                            </div>
+                        </div>
+
+                        <div class="past-assessment-item">
+                            <div class="assessment-meta">
+                                <h4>Title</h4>
+                                <span class="assessment-date">Date</span>
+                            </div>
+                            <div class="assessment-score">
+                                <span class="score-label">Rating</span>
+                                <span class="score-value">00%</span>
+                            </div>
+                        </div>
+
+                        <div class="past-assessment-item">
+                            <div class="assessment-meta">
+                                <h4>Title</h4>
+                                <span class="assessment-date">Date</span>
+                            </div>
+                            <div class="assessment-score">
+                                <span class="score-label">Rating</span>
+                                <span class="score-value">00%</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/logout.js"></script>
+</body>
+</html>

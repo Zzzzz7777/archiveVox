@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Management - ArchiveVox</title>
+    <link rel="stylesheet" href="/static/admin-style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-area">ArchiveVox</div>
+                <div class="menu-label">Menus</div>
+                <div class="user-role-card">
+                    <span class="role-title">Logged in as</span>
+                    <span class="role-name">Principal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+    <a href="/principal-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="/principal/teachers.html" class="nav-item">Teachers</a>
+    <a href="/principal/students.html" class="nav-item active">
+        Students 
+        <span class="arrow">&gt;</span>
+    </a>
+    <a href="/principal/library.html" class="nav-item">Library</a>
+    <a href="/principal/assessments.html" class="nav-item">Assessments</a>
+    <a href="/principal/reports.html" class="nav-item">Reports</a>
+</nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar-placeholder"></div>
+                    <div>
+                        <div class="profile-name">Name</div>
+                        <div class="profile-role">Role</div>
+                    </div>
+                </div>
+                <button class="settings-btn" id="logoutBtn" aria-label="Logout" onclick="handleLogout()">🚪</button>
+            </div>
+        </aside>
+
+        <!-- Main Panel Content -->
+        <main class="main-content">
+            <!-- Header Top Bar -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Students</h1>
+                    <span class="current-date">Date</span>
+                </div>
+                <button class="notification-btn" aria-label="Notifications">🔔</button>
+            </header>
+
+            <!-- Workspace Layout -->
+            <div class="students-container">
+                
+                <!-- Action Controls: Search, Filter & Add Student -->
+                <div class="action-bar">
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="Value" class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-filter">🎛 Filter</button>
+                        <button class="btn-primary-action">+ Add Student</button>
+                    </div>
+                </div>
+
+                <!-- Students Table Box -->
+                <div class="table-box">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>GRADE</th>
+                                    <th>SECTION</th>
+                                    <th>READING LEVEL</th>
+                                    <th>LAST ASSESSED</th>
+                                    <th>ACCURACY</th>
+                                    <th>PROGRESS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>STU-123</td>
+                                    <td>Student Name</td>
+                                    <td>Grade 2</td>
+                                    <td>Sampaguita</td>
+                                    <td>Satisfactory</td>
+                                    <td>MM-DD-YYYY</td>
+                                    <td>84%</td>
+                                    <td><span class="status-improving">Improving</span></td>
+                                </tr>
+                                <tr>
+                                    <td>STU-123</td>
+                                    <td>Student Name</td>
+                                    <td>Grade 3</td>
+                                    <td>Rosal</td>
+                                    <td>Did Not Meet Expectations</td>
+                                    <td>MM-DD-YYYY</td>
+                                    <td>31%</td>
+                                    <td><span class="status-declining">Declining</span></td>
+                                </tr>
+                                <tr>
+                                    <td>STU-123</td>
+                                    <td>Student Name</td>
+                                    <td>Grade 2</td>
+                                    <td>Ilang-ilang</td>
+                                    <td>Fairly Satisfactory</td>
+                                    <td>MM-DD-YYYY</td>
+                                    <td>78%</td>
+                                    <td><span class="status-stable">Stable</span></td>
+                                </tr>
+                                <tr>
+                                    <td>STU-123</td>
+                                    <td>Student Name</td>
+                                    <td>Grade 3</td>
+                                    <td>Rosal</td>
+                                    <td>Satisfactory</td>
+                                    <td>MM-DD-YYYY</td>
+                                    <td>84%</td>
+                                    <td><span class="status-improving">Improving</span></td>
+                                </tr>
+                                <tr>
+                                    <td>STU-123</td>
+                                    <td>Student Name</td>
+                                    <td>Grade 2</td>
+                                    <td>Sampaguita</td>
+                                    <td>Satisfactory</td>
+                                    <td>MM-DD-YYYY</td>
+                                    <td>84%</td>
+                                    <td><span class="status-improving">Improving</span></td>
+                                </tr>
+                                <tr>
+                                    <td>STU-123</td>
+                                    <td>Student Name</td>
+                                    <td>Grade 3</td>
+                                    <td>Ilang-ilang</td>
+                                    <td>Satisfactory</td>
+                                    <td>MM-DD-YYYY</td>
+                                    <td>84%</td>
+                                    <td><span class="status-improving">Improving</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/shared/logout.js"></script>
+</body>
+</html>

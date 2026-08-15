@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+bcrypt==4.0.1
+flask
+supabase
+python-dotenv
+passlib
+pydantic
